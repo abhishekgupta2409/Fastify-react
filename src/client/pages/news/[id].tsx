@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function NewsDetail({ news }) {
   return (
     <>
@@ -12,10 +10,10 @@ export default function NewsDetail({ news }) {
 }
 
 export async function getServerSideProps(context) {
-  const { params, req, res, query } = context;
+  const { params } = context;
 
   const result = await fetch(
-    `https://jsonplaceholder.typicode.com/albums/${params.id}`
+    `https://jsonplaceholder.typicode.com/albums/${params.id}`,
   );
   const data = await result.json();
 
